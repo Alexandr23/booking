@@ -32,6 +32,7 @@ class Html extends React.Component<IHtmlProps, {}> {
       <html>
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         {renderStyles}
       </head>
       <body>

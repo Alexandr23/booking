@@ -1,8 +1,7 @@
 import App from '../containers/App';
 import {Store} from 'redux';
 import {IState} from 'models/store';
-import configureStoreRoutes from '../modules/Store/routes';
-import configureAdminRoutes from '../modules/Admin/routes';
+import Favorite from '../pages/Favorite';
 
 
 export default (store: Store<IState>) => {
@@ -10,10 +9,12 @@ export default (store: Store<IState>) => {
     childRoutes: [{
       path: '/',
       component: App,
-      indexRoute: {onEnter: (nextState: any, replace: any) => replace('/store/catalog')},
+      indexRoute: {onEnter: (nextState: any, replace: any) => replace('/favorite')},
       childRoutes: [
-        configureStoreRoutes(store),
-        configureAdminRoutes(store),
+        {
+          path: '/favorite',
+          component: Favorite,
+        },
       ],
     }],
   }
