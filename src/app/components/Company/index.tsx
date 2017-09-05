@@ -24,7 +24,10 @@ class Company extends PureComponent<IProps, null> {
           <div className={cx('image', 'image_' + image_mod)} />
 
           <div className={cx('content')}>
-            <h1 className={cx('title')}>{this.props.company.title}</h1>
+            <div className={cx('title-block')}>
+              <h1 className={cx('title')}>{this.props.company.title}</h1>
+              <div className={cx('actions')} />
+            </div>
             {/*<div className={cx('description')}>{this.props.company.description}</div>*/}
           </div>
         </div>
