@@ -3,7 +3,7 @@
 var config = {
   env: process.env.NODE_ENV || 'development',
   host: process.env.HOST || 'localhost',
-  port: process.env.PORT || 8889,
+  port: process.env.PORT || 8887,
   apiBaseUrl: 'http://api.bmp.magonline.ru/api/',
 };
 

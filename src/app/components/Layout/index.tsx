@@ -1,5 +1,6 @@
 import * as React from 'react';
 const {PureComponent} = React;
+import Menu from '../Menu';
 
 /* Styles */
 const style = require('./style.less');
@@ -18,8 +19,8 @@ class Layout extends PureComponent<IProps, null> {
   render() {
     return (
       <div className={cx('layout')}>
-        <div className={cx('content')}>{this.props.children}</div>
-        <div className={cx('menu')}></div>
+        <div className={cx('layout__content')}>{this.props.children}</div>
+        <div className={cx('layout__menu')}><Menu /></div>
       </div>
     );
   }

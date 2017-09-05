@@ -16,10 +16,12 @@ class Company extends PureComponent<IProps, null> {
   props: IProps;
 
   render() {
+    const image_mod = this.props.company.id % 3 + 1;
+
     return (
       <div className={cx('company')}>
         <div className={cx('inner')}>
-          <div className={cx('image')} />
+          <div className={cx('image', 'image_' + image_mod)} />
 
           <div className={cx('content')}>
             <h1 className={cx('title')}>{this.props.company.title}</h1>
