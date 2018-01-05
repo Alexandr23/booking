@@ -14,7 +14,7 @@ class Profile extends PureComponent<IProps, null> {
 
   render() {
     return (
-      <Layout>
+      <Layout title="Профиль">
         Профиль пользователя
       </Layout>
     );

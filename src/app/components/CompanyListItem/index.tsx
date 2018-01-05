@@ -20,7 +20,7 @@ class CompanyListItem extends PureComponent<IProps, null> {
     const image_mod = this.props.company.id % 3 + 1;
 
     return (
-      <Link to={`/company/${this.props.company.id}`} className={cx('company')}>
+      <Link to={`/company/${this.props.company.id}/booking`} className={cx('company')}>
         <div className={cx('inner')}>
           <div className={cx('image', 'image_' + image_mod)} />
 

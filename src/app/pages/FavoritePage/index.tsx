@@ -17,7 +17,7 @@ class Favorite extends PureComponent<IProps, null> {
     const list = COMPANY_LIST.filter(company => company.isFavorite);
 
     return (
-      <Layout>
+      <Layout title="Избранное">
         <CompanyList list={list} />
       </Layout>
     );

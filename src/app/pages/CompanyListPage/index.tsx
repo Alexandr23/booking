@@ -15,7 +15,7 @@ class Company extends PureComponent<IProps, null> {
 
   render() {
     return (
-      <Layout>
+      <Layout title="Компании">
         <CompanyList list={COMPANY_LIST} />
       </Layout>
     );

@@ -5,6 +5,52 @@
   height: 100vh;
 }
 
+.layout__header {
+  position: relative;
+  height: 40px;
+  padding: 0 40px;
+  background: #9c109c;
+  text-align: center;
+}
+
+.layout__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('../Layout/img/arrow-left.svg') center no-repeat;
+  background-size: 16px 16px;
+}
+
+.layout__logo {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 42px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url('../Layout/img/logo.svg') center no-repeat;
+    background-size: 24px 24px;
+  }
+}
+
 .layout__menu {
   display: block;
   position: fixed;
@@ -20,6 +66,5 @@
   display: block;
   position: relative;
   width: 100%;
-  min-height: 100%;
   padding-bottom: 40px;
 }

@@ -1,0 +1,33 @@
+.services {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.services__title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: auto;
+}
+
+@size: 80px;
+
+.services__item {
+  display: block;
+  width: @size;
+  min-width: @size;
+  height: @size;
+  background: #eeeeee;
+
+  & + & {margin-left: 10px;}
+}
+
+.services__item_active {
+  background: #9c109c;
+}

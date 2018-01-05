@@ -4,6 +4,7 @@ import {IState} from 'models/store';
 import FavoritePage from '../pages/FavoritePage';
 import CompanyListPage from '../pages/CompanyListPage';
 import CompanyPage from '../pages/CompanyPage';
+import CompanyBookingPage from '../pages/CompanyBookingPage';
 import ProfilePage from '../pages/ProfilePage';
 
 
@@ -21,6 +22,10 @@ export default (store: Store<IState>) => {
         {
           path: '/company/list',
           component: CompanyListPage,
+        },
+        {
+          path: '/company/:id/booking',
+          component: CompanyBookingPage,
         },
         {
           path: '/company/:id',
