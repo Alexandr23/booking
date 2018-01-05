@@ -6,10 +6,8 @@
     "server:dev": "webpack --config config/webpack/server.js",
     "server:prod": "cross-env NODE_ENV=production npm run server:dev",
     "server:start": "node dist/server.js",
-
     "build:dev": "npm run client:dev && npm run server:dev",
     "build:prod": "npm run client:prod && npm run server:prod",
-
     "start:dev": "npm-run-all --parallel server:dev client:start",
     "start:prod": "npm run build:prod && npm run server:start"
   },
@@ -28,6 +26,7 @@
     "postcss-cssnext": "^3.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-google-maps": "^7.3.0",
     "react-helmet": "^5.0.3",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.2",

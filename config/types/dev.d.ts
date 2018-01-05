@@ -11,3 +11,7 @@ interface Window {
 declare module 'redux-connect' {
   function ReduxAsyncConnect():any;
 }
+
+declare module 'react-google-maps' {
+  function GoogleMap(): any;
+}

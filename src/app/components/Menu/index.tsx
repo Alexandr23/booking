@@ -26,7 +26,7 @@ class Menu extends PureComponent<IProps, null> {
         <Link to="/favorite" className={cx('item', 'item_favorite', {'item_active': page === 'favorite'})}>
           <div className={cx('inner')}>Избранное</div>
         </Link>
-        <Link to="/company" className={cx('item', 'item_company', {'item_active': page === 'company'})}>
+        <Link to="/company/list" className={cx('item', 'item_company', {'item_active': page.indexOf('company') !== -1})}>
           <div className={cx('inner')}>Компании</div>
         </Link>
         <Link to="/profile" className={cx('item', 'item_profile', {'item_active': page === 'profile'})}>

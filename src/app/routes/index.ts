@@ -1,9 +1,10 @@
 import App from '../containers/App';
 import {Store} from 'redux';
 import {IState} from 'models/store';
-import Favorite from '../pages/Favorite';
-import Company from '../pages/Company';
-import Profile from '../pages/Profile';
+import FavoritePage from '../pages/FavoritePage';
+import CompanyListPage from '../pages/CompanyListPage';
+import CompanyPage from '../pages/CompanyPage';
+import ProfilePage from '../pages/ProfilePage';
 
 
 export default (store: Store<IState>) => {
@@ -15,15 +16,19 @@ export default (store: Store<IState>) => {
       childRoutes: [
         {
           path: '/favorite',
-          component: Favorite,
+          component: FavoritePage,
         },
         {
-          path: '/company',
-          component: Company,
+          path: '/company/list',
+          component: CompanyListPage,
+        },
+        {
+          path: '/company/:id',
+          component: CompanyPage,
         },
         {
           path: '/profile',
-          component: Profile,
+          component: ProfilePage,
         },
       ],
     }],
