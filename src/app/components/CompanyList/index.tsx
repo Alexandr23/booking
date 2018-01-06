@@ -1,7 +1,8 @@
 import * as React from 'react';
 const {PureComponent} = React;
-import CompanyListItem from '../CompanyListItem';
+import CompanyCard from '../CompanyCard';
 import {ICompany} from '../../models/company';
+import {Link} from 'react-router';
 
 /* Styles */
 const style = require('./style.less');
@@ -14,13 +15,17 @@ interface IProps {
 }
 
 
-class CompanyList extends PureComponent<IProps, null> {
+class CompanyList extends PureComponent<IProps> {
   props: IProps;
 
   render() {
     return (
       <div className={cx('list')}>
-        {this.props.list.length && this.props.list.map(company => <CompanyListItem key={company.id} company={company} />)}
+        {this.props.list.length && this.props.list.map(company =>
+          <Link to={`/company/${company.id}/booking`}>
+            <CompanyCard key={company.id} company={company} link />
+          </Link>
+        )}
       </div>
     );
   }

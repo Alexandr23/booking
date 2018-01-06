@@ -10,7 +10,7 @@ interface IProps {
 }
 
 
-class Company extends PureComponent<IProps, null> {
+class Company extends PureComponent<IProps> {
   props: IProps;
 
   render() {

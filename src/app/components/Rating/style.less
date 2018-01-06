@@ -1,0 +1,19 @@
+@size: 10px;
+
+.rating {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.rating__item {
+  float: left;
+  display: block;
+  width: @size;
+  height: @size;
+  background: url('../Rating/img/star.svg') center no-repeat;
+  background-size: @size @size;
+
+  & + & {margin-left: 2px;}
+}
+
+.rating__item_active {background-image: url('../Rating/img/star-active.svg');}

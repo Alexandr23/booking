@@ -14,7 +14,7 @@ class App extends PureComponent<IProps, null> {
   render() {
     return (
       <div>
-        <Helmet defaultTitle="Big Market Place" titleTemplate="%s | Big Market Place"/>
+        <Helmet defaultTitle="Booking" titleTemplate="%s | Booking"/>
         {this.props.children}
       </div>
     );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 const {PureComponent} = React;
-import {IService} from '../../models/service';
+import {IMaster} from '../../models/master';
 
 /* Styles */
 const style = require('./style.less');
@@ -9,7 +9,7 @@ const cx = classNames.bind(style);
 
 
 interface IProps {
-  list: IService[];
+  list: IMaster[];
 }
 
 interface IState {
@@ -17,7 +17,7 @@ interface IState {
 }
 
 
-class Services extends PureComponent<IProps, IState> {
+class Masters extends PureComponent<IProps, IState> {
   props: IProps;
   state: IState;
 
@@ -47,12 +47,12 @@ class Services extends PureComponent<IProps, IState> {
     return this.state.selected.indexOf(id) !== -1;
   }
 
-  renderItem = service => (
-      <div key={service.id}
-           onClick={event => this.toggleActive(service.id)}
+  renderItem = master => (
+      <div key={master.id}
+           onClick={event => this.toggleActive(master.id)}
            className={cx({
-            services__item: true,
-            services__item_active: this.isSelected(service.id),
+            masters__item: true,
+            masters__item_active: this.isSelected(master.id),
            })}>
 
       </div>
@@ -60,11 +60,11 @@ class Services extends PureComponent<IProps, IState> {
 
   render() {
     return (
-      <div className={cx('services')}>
-        <h2 className={cx('services__title')}>Услуги</h2>
+      <div className={cx('masters')}>
+        <h2 className={cx('masters__title')}>Мастера</h2>
 
         {this.props.list.length && (
-            <div className={cx('services__list')}>
+            <div className={cx('masters__list')}>
               {this.props.list.map(this.renderItem)}
             </div>
         )}
@@ -73,4 +73,4 @@ class Services extends PureComponent<IProps, IState> {
   }
 }
 
-export default Services;
+export default Masters;
