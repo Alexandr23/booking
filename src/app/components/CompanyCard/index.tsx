@@ -16,7 +16,7 @@ interface IProps {
 }
 
 
-class CompanyListItem extends PureComponent<IProps> {
+class CompanyCard extends PureComponent<IProps> {
   props: IProps;
 
   render() {
@@ -41,7 +41,7 @@ class CompanyListItem extends PureComponent<IProps> {
 
             <div className={cx('info')}>
               {schedule && <div className={cx('info__item', 'info__item_schedule')}>{
-                schedule.map(item => <p>{item}</p>)
+                schedule.map((item, i) => <p key={i}>{item}</p>)
               }</div>}
 
               {phone && <div className={cx('info__item', 'info__item_phone')}>{phone}</div>}
@@ -53,4 +53,4 @@ class CompanyListItem extends PureComponent<IProps> {
   }
 }
 
-export default CompanyListItem;
+export default CompanyCard;

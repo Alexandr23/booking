@@ -22,7 +22,7 @@ class CompanyList extends PureComponent<IProps> {
     return (
       <div className={cx('list')}>
         {this.props.list.length && this.props.list.map(company =>
-          <Link to={`/company/${company.id}/booking`}>
+          <Link className={cx('item')} to={`/company/${company.id}/booking`}>
             <CompanyCard key={company.id} company={company} link />
           </Link>
         )}

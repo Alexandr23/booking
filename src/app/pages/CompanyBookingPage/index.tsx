@@ -29,9 +29,12 @@ class CompanyBookingPage extends PureComponent<IProps> {
 
     return (
       <Layout title="Компания" back="/favorite">
-        <CompanyCard company={company} />
 
         <div className={cx('booking')}>
+          <div className={cx('company')}>
+            <CompanyCard company={company} />
+          </div>
+
           <div className={cx('services')}>
             <Services list={SERVICE_LIST} />
           </div>

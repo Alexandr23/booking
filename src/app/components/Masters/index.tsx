@@ -13,7 +13,7 @@ interface IProps {
 }
 
 interface IState {
-  selected: number[];
+  selected: number | boolean;
 }
 
 
@@ -25,50 +25,38 @@ class Masters extends PureComponent<IProps, IState> {
     super(props);
 
     this.state = {
-      selected: [],
-    }
+        selected: false,
+    };
   }
 
   toggleActive = (id: number) => {
-    let selected = [...this.state.selected];
-
-    let index = selected.indexOf(id);
-
-    if (index === -1) {
-      selected.push(id);
-    } else {
-      selected.splice(index, 1);
-    }
-
-    this.setState({selected})
+    this.setState({selected: this.state.selected === id ? false : id});
   }
 
-  isSelected = (id) => {
-    return this.state.selected.indexOf(id) !== -1;
-  }
+  reset = () => this.setState({selected: false});
 
-  renderItem = master => (
-      <div key={master.id}
-           onClick={event => this.toggleActive(master.id)}
+  renderItem = ({id, name}: IMaster) => (
+      <div key={id}
+           onClick={event => this.toggleActive(id)}
            className={cx({
-            masters__item: true,
-            masters__item_active: this.isSelected(master.id),
+             master: true,
+             master_active: this.state.selected === id,
+             ['master_' + (id % 5 + 1)]: true,
            })}>
-
+        <div className={cx('master__name')}>{name}</div>
       </div>
   )
 
   render() {
     return (
-      <div className={cx('masters')}>
-        <h2 className={cx('masters__title')}>Мастера</h2>
+        <div className={cx('masters')}>
+          <h2 className={cx('masters__title')}>
+              Мастера
+              {!!this.state.selected && <div className={cx('reset')} onClick={this.reset}>Сбросить</div>}
+          </h2>
 
-        {this.props.list.length && (
-            <div className={cx('masters__list')}>
-              {this.props.list.map(this.renderItem)}
-            </div>
-        )}
-      </div>
+          {this.props.list.length && <div className={cx('masters__list')}>{this.props.list.map(this.renderItem)}</div>}
+        </div>
     );
   }
 }
