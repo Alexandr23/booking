@@ -6,6 +6,7 @@ import CompanyListPage from '../pages/CompanyListPage';
 import CompanyPage from '../pages/CompanyPage';
 import CompanyBookingPage from '../pages/CompanyBookingPage';
 import ProfilePage from '../pages/ProfilePage';
+import LoginPage from '../pages/LoginPage';
 
 
 export default (store: Store<IState>) => {
@@ -15,6 +16,10 @@ export default (store: Store<IState>) => {
       component: App,
       indexRoute: {onEnter: (nextState: any, replace: any) => replace('/favorite')},
       childRoutes: [
+        {
+          path: '/login',
+          component: LoginPage,
+        },
         {
           path: '/favorite',
           component: FavoritePage,

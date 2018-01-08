@@ -24,7 +24,7 @@ class Layout extends PureComponent<IProps> {
       <div className={cx('layout', {layout_back: !!this.props.back})}>
         <div className={cx('layout__header')}>
             {this.props.back && <Link to={this.props.back} className={cx('layout__back')}></Link>}
-            <div className={cx('layout__logo')}>Booking</div>
+            <Link to="/login" className={cx('layout__logo')}>Booking</Link>
         </div>
         <div className={cx('layout__content')}>{this.props.children}</div>
         <div className={cx('layout__menu')}><Menu /></div>
