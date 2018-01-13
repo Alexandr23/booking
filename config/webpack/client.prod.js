@@ -10,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve('./dist/'),
     filename: '[name].js?v=[hash]',
+    publicPath: '/',
   },
 
   resolve: {
@@ -49,7 +50,7 @@ module.exports = {
           use: [
             {loader: 'css-loader'},
           ],
-          publicPath: "/dist",
+          publicPath: "/",
         }),
       },
       {
@@ -61,7 +62,7 @@ module.exports = {
             {loader: 'css-loader'},
             {loader: 'less-loader'},
           ],
-          publicPath: "/dist",
+          publicPath: "/",
         }),
       },
       {
@@ -79,7 +80,7 @@ module.exports = {
             },
             'less-loader'
           ],
-          publicPath: "/dist",
+          publicPath: "/",
         }),
       },
       {

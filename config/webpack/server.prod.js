@@ -23,9 +23,9 @@ var config = {
   entry: './src/server/index.tsx',
 
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('./dist/'),
     filename: 'server.js',
-    publicPath: '/dist/',
+    publicPath: '/',
     libraryTarget: 'commonjs2'
   },
 
