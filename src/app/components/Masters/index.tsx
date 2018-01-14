@@ -51,7 +51,7 @@ class Masters extends PureComponent<IProps, IState> {
     return (
         <div className={cx('masters')}>
           <h2 className={cx('masters__title')}>
-              Мастера
+              Мастер
               {!!this.state.selected && <div className={cx('reset')} onClick={this.reset}>Сбросить</div>}
           </h2>
 

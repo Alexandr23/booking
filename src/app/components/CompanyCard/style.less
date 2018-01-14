@@ -8,14 +8,21 @@
 
 .inner {display: flex;}
 
+.company__image {font-size: 0;}
+
+
+@image-size: 80px;
+
 .image {
   display: block;
-  width: 58px;
-  min-width: 58px;
-  height: 58px;
+  width: @image-size;
+  min-width: @image-size;
+  height: @image-size;
   background: #cccccc;
   border-radius: 2px;
 }
+
+.company__rating {margin-top: 4px;}
 
 .image_1 {
   background: url('../Company/img/1.jpg') no-repeat;
@@ -46,15 +53,16 @@
 }
 
 .title {
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 18px;
   font-weight: 400;
-  line-height: 16px;
   color: #292929;
+  margin-bottom: 5px;
 }
 
 .arrow {
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
   display: block;
   width: 16px;
@@ -63,24 +71,15 @@
   background-size: 12px 12px;
 }
 
-.address {
-  display: block;
-  min-height: 20px;
-  font-size: 9px;
-  line-height: 12px;
-  color: #5d5f61;
-  margin-bottom: 10px;
-}
-
-.info {display: flex;}
-
-.info__item {
+.info {
   position: relative;
   display: block;
   padding-left: 15px;
   font-size: 9px;
   line-height: 12px;
   color: #5d5f61;
+
+  & + & {margin-top: 5px;}
 
   &:before {
     content: '';
@@ -95,6 +94,6 @@
   }
 }
 
-.info__item_schedule:before {background-image: url('../CompanyCard/img/schedule.svg');}
-.info__item_schedule + .info__item_phone {margin-left: 10px;}
-.info__item_phone:before {background-image: url('../CompanyCard/img/phone.svg');}
+.info_address:before {background-image: url('../CompanyCard/img/address.svg');}
+.info_schedule:before {background-image: url('../CompanyCard/img/schedule.svg');}
+.info_phone:before {background-image: url('../CompanyCard/img/phone.svg');}

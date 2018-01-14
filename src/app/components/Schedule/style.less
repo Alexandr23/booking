@@ -1,0 +1,71 @@
+.schedule {
+
+}
+
+.schedule__title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #292929;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.days {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+  padding: 5px 10px;
+  background: #444444;
+  margin-top: 10px;
+}
+
+.day {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 10px;
+  padding: 6px 0;
+  color: #cccccc;
+
+  & + & {margin-left: 10px;}
+}
+
+.day_today {border: 1px solid #cccccc;}
+.day_active {
+  border: 1px solid #9c109c;
+  background: #9c109c;
+}
+
+.day__day {font-size: 13px;}
+.day__weekday {font-size: 10px;}
+
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.slot {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 13px;
+  line-height: 20px;
+  border: 1px solid #444444;
+  border-radius: 30px;
+  color: #444444;
+  margin: 5px;
+
+  //& + & {margin-left: 10px;}
+}
+
+.slot_active {
+  border-color: #9c109c;
+  background: #9c109c;
+  color: #ffffff;
+}

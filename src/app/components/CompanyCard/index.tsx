@@ -26,9 +26,11 @@ class CompanyCard extends PureComponent<IProps> {
     return (
       <div className={cx('company')}>
         <div className={cx('inner')}>
-          <div>
+          <div className={cx('company__image')}>
             <div className={cx('image', 'image_' + image_mod)} />
-            <Rating rating={rating}/>
+            <div className={cx('company__rating')}>
+              <Rating rating={rating}/>
+            </div>
           </div>
 
           <div className={cx('content')}>
@@ -37,15 +39,13 @@ class CompanyCard extends PureComponent<IProps> {
               {this.props.link && <div className={cx('arrow')} />}
             </div>
 
-            {address && <div className={cx('address')}>{address}</div>}
+            {address && <div className={cx('info', 'info_address')}>{address}</div>}
 
-            <div className={cx('info')}>
-              {schedule && <div className={cx('info__item', 'info__item_schedule')}>{
-                schedule.map((item, i) => <p key={i}>{item}</p>)
-              }</div>}
+            {phone && <div className={cx('info', 'info_phone')}>{phone}</div>}
 
-              {phone && <div className={cx('info__item', 'info__item_phone')}>{phone}</div>}
-            </div>
+            {schedule && <div className={cx('info', 'info_schedule')}>{
+              schedule.map((item, i) => <p key={i}>{item}</p>)
+            }</div>}
           </div>
         </div>
       </div>

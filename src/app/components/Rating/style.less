@@ -1,7 +1,9 @@
-@size: 10px;
+@size: 16px;
+@icon-size: 12px;
 
 .rating {
   display: inline-block;
+  vertical-align: top;
   overflow: hidden;
 }
 
@@ -11,9 +13,7 @@
   width: @size;
   height: @size;
   background: url('../Rating/img/star.svg') center no-repeat;
-  background-size: @size @size;
-
-  & + & {margin-left: 2px;}
+  background-size: @icon-size @icon-size;
 }
 
 .rating__item_active {background-image: url('../Rating/img/star-active.svg');}
